@@ -46,8 +46,8 @@ public class EggDrop {
         }
 
         // With no eggs not a single egg drop can be attempted in the first
-        // place, with one egg we need to make the same number of attempts
-        // as there are... floors to see where the egg breaks.
+        // place, and with one egg we need to make the same number of attempts
+        // as there are floors to see where the egg breaks.
         for (j = 0; j <= floors; j++) {
             minNumOfEggDrops[0][j] = 0;
             minNumOfEggDrops[1][j] = j;
@@ -69,8 +69,9 @@ public class EggDrop {
 
                     // Do we keep the array result, or is the most recent drop
                     // attempt better?
-                    if (drop < minNumOfEggDrops[i][j])
+                    if (drop < minNumOfEggDrops[i][j]) {
                         minNumOfEggDrops[i][j] = drop;
+                    }
                 }
             }
         }
